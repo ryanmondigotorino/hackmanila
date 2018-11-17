@@ -1,17 +1,15 @@
 <section class="banner-1">
     <div class="container">
-          <div class="row">
+        <div class="row">
             <div class="col-md-6 product">
                 <p class="product-title">
-                Lorem Ipsum
+                    Lorem Ipsum
                 </p>
                 <p class="product-content">
-                is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                 </p>
             </div>
-           
+
         </div>
     </div>
 </section>
@@ -20,15 +18,15 @@
         <p class="acc-title"> FEATURED ACCESSORIES</p>
         <div class="row">
             <div class="col-sm-4 product-wrapper-small">
-            <img class="product-img" src="<?=base_url()?>/assets/images/cases.png" alt="">
+                <img class="product-img" src="<?=base_url()?>/assets/images/cases.png" alt="">
                 <p class="product-details">
-                Lorem Ipsum
+                    Lorem Ipsum
                 </p>
             </div>
             <div class="col-sm-8 product-wrapper">
                 <img class="product-img" src="<?=base_url()?>/assets/images/cases.png" alt="">
                 <p class="product-details">
-                Lorem Ipsum
+                    Lorem Ipsum
                 </p>
             </div>
         </div>
@@ -36,19 +34,19 @@
             <div class="col-sm-4 product-wrapper">
                 <img class="product-img" src="<?=base_url()?>/assets/images/cases.png" alt="">
                 <p class="product-details">
-                Lorem Ipsum
+                    Lorem Ipsum
                 </p>
             </div>
             <div class="col-sm-4 product-wrapper">
                 <img class="product-img" src="<?=base_url()?>/assets/images/cases.png" alt="">
                 <p class="product-details">
-                Lorem Ipsum
+                    Lorem Ipsum
                 </p>
             </div>
             <div class="col-sm-4 product-wrapper">
                 <img class="product-img" src="<?=base_url()?>/assets/images/cases.png" alt="">
                 <p class="product-details">
-                Lorem Ipsum
+                    Lorem Ipsum
                 </p>
             </div>
         </div>
@@ -66,3 +64,34 @@
         </div>
     </div>
 </section>
+<section class="categories">
+    <div class="container">
+        <div class="row icon-categories">
+            <div class="col-sm-3">
+                <img class="product-img" src="<?=base_url()?>/assets/images/icon1-1.png" alt="">
+                <p class="product-details">
+                    Lorem Ipsum
+                </p>
+            </div>
+            <div class="col-sm-3">
+                <img class="product-img" src="<?=base_url()?>/assets/images/icon2.png" alt="">
+                <p class="product-details">
+                    Lorem Ipsum
+                </p>
+            </div>
+            <div class="col-sm-3">
+                <img class="product-img" src="<?=base_url()?>/assets/images/icon-4.png" alt="">
+                <p class="product-details">
+                    Lorem Ipsum
+                </p>
+            </div>
+            <div class="col-sm-3">
+                <img class="product-img" src="<?=base_url()?>/assets/images/icon-4.png" alt="">
+                <p class="product-details">
+                    Lorem Ipsum
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="watch"></section>
