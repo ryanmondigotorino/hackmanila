@@ -29,9 +29,11 @@ nav.navbar {
     background: url(../images/new-arrivals.jpg);
     color: #fff;
     width: 100%;
-    background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
+}
+.new-arr-title{
+    margin: 150px 0px;
 }
 .product{
     margin: 150px 0px;
@@ -65,6 +67,11 @@ nav.navbar {
 }
 .product-wrapper-small {
     padding: 100px 10px;
+}
+.bold {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
 }
 .shop-link {
     font-family: 'Montserrat', sans-serif;
