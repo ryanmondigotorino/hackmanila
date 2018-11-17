@@ -6,6 +6,9 @@ body{
 a.nav-link {
     color: #fff !important;
 }
+a.nav-link:hover {
+    color: #000 !important;
+}
 p.acc-title {
     font-size: 34px;
     font-weight: 700;
@@ -53,6 +56,7 @@ nav.navbar {
 .product-title{
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
+    font-weight: 700;
 }
 .product-content{
     font-family: 'Montserrat', sans-serif;
@@ -118,4 +122,32 @@ form {
 }
 label{
     color: #000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/** SIGNUP CSS**/
+
+.account-wrapper {
+    margin: 0px;
+    background: url(../images/signup.jpg);
+    background-repeat: no-repeat;
+    color: #fff;
+    width: 100%;
+}
+.signup {
+    margin: 100px 0px;
+}
+
+/** SHOP CSS **/
+.banner-signup{
+    background: url(../images/shop-banner.jpg);
+    color: #fff;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.product-wrap {
+    margin: 50px 0px;
 }
