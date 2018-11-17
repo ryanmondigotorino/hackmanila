@@ -147,7 +147,52 @@ label{
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 .product-wrap {
     margin: 50px 0px;
 }
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .product-wrapper-small:hover .product-img {
+    opacity: 0.2;
+  }
+  .product-wrapper-small:hover .middle {
+    opacity: 1;
+  }
+  .dark-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.8; 
+    cursor: pointer; 
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
