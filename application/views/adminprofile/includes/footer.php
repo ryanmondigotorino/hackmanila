@@ -1,4 +1,18 @@
         </div>
+        <script>
+            $(".datatableforadmin").DataTable({
+                responsive: true,
+                autoWidth: false,
+                order: [[0, "asc"]],
+                oLanguage: {
+                    oPaginate: {
+                        sNext: '<span class="pagination-fa"><i class="fa fa-chevron-right" ></i></span>',
+                        sPrevious: '<span class="pagination-fa"><i class="fa fa-chevron-left" ></i></span>'
+                    },
+                    sSearch: '<i class="fa fa-search fa-fw"></i>',
+                }
+            });
+        </script>
         <script src="<?=base_url()?>assets/js/jquery/jquery-3.1.1.min.js"></script>
         <script src="<?=base_url()?>assets/js/jquery/jquery.validate.min.js"></script>        
         <script src="<?=base_url()?>assets/js/jquery/feather.min.js"></script>

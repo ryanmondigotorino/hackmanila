@@ -181,6 +181,7 @@ class Landing extends CI_Controller{
                 'contact_number' => $this->input->post('contact'),
                 'email' => strtolower($this->input->post('email')),
                 'password' => sha1($this->input->post('password`')),
+                'date_registered' => time(),
                 'access_code' => $verification_code
             );
             if (!$this->accounts_model->insert('users_tbl', $getAccountsData)) {
@@ -258,7 +259,10 @@ class Landing extends CI_Controller{
         }
     }
     public function shop(){
-        $this->load->view('landing/includes/header');
+        $title = array(
+            'title' => 'Shop'
+        );
+        $this->load->view('landing/includes/header',$title);
         $this->load->view('landing/shop');
         $this->load->view('landing/includes/footer');
     }
