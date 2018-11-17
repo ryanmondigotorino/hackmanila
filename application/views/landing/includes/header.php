@@ -7,10 +7,11 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400i" rel="stylesheet">
     <script src="<?=base_url()?>assets/js/sweetalert/sweetalert.min.js"></script>
+    <link href="<?=base_url()?>assets/css/pageloader.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
-<body>
+<body onload="myFunction()">
     <nav class="navbar navbar-expand-sm navbar-light justify-content-between">
         <a class="navbar-brand" href="#"><img src=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#">

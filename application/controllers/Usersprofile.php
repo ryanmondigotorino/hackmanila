@@ -10,7 +10,6 @@ class Usersprofile extends CI_Controller{
             redirect('');
         } 
     }
-
     public function index(){
         $accode = $this->session->datauser;
         echo 'This is seller = '.$accode;
