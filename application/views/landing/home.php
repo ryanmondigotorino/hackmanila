@@ -1,0 +1,1 @@
+hash_copy <a href="<?=base_url()?>landing/getlanding">link to get</a>
