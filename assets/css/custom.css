@@ -171,13 +171,11 @@ label{
     font-size: 30px;
     font-weight: 700;
 }
-
 .column {
     float: left;
     width: 25%;
     padding: 10px;
 }
-/* Style the images inside the grid */
 .column img {
     opacity: 0.8; 
     cursor: pointer; 
@@ -186,8 +184,6 @@ label{
 .column img:hover {
     opacity: 1;
 }
-
-/* Expanding image text */
 #imgtext {
     position: absolute;
     bottom: 15px;
@@ -195,4 +191,26 @@ label{
     color: white;
     font-size: 20px;
 }
-
+.expanded {
+    margin: 90px 0px;
+}
+.expanded-content {
+    margin: 50px 0px;
+}
+.prod-title {
+    font-weight: bold;
+    font-size: 25px;
+}
+.price{
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+.buttons {
+    margin: 0px 0px 10px 0px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 0px;
+}
+.btn-number{
+    padding: 10px !important;
+}
