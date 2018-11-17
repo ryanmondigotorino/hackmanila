@@ -237,7 +237,7 @@
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="<?=base_url()?>adminprofile/sellersaccounts">
+									<a class="nav-link" href="<?=base_url()?>adminprofile/selleraccounts">
 										<span class="fa fa-user"></span>
 										Seller Accounts
 									</a>
@@ -272,6 +272,32 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-danger pull-right" data-dismiss="modal" aria-label="Close">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="logoutModalCenterTitle" aria-hidden="true" 
+				data-backdrop="static" data-keyboard="false">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="logoutModalCenterTitle">Logout</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="container">
+								<div class="row">
+									<p>Are you sure do you want to log-out?</p>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<form class="form" method="POST" action="<?=base_url()?>adminprofile/logout/">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+								<button type="success" class="btn btn-secondary" name="sbmt">logout</button>
+							</form>
 						</div>
 					</div>
 				</div>
