@@ -9,6 +9,13 @@ class Landing extends CI_Controller{
         $this->load->library('form_validation');
         $this->load->model('accounts_model');
         date_default_timezone_set("Asia/Manila");
+        if ($this->session->has_userdata('adminislogin') == TRUE) {
+            redirect('adminprofile/');
+        }elseif ($this->session->has_userdata('sellerislogin') == TRUE) {
+            redirect('sellersprofile/');
+        }elseif ($this->session->has_userdata('userislogin') == TRUE) {
+            redirect('usersprofile/');
+        }
         
     }
     public function index(){
@@ -59,7 +66,8 @@ class Landing extends CI_Controller{
                 if($admindetails || $sellersdetails){
                     $message = array(
                         'type' => 'warning',
-                        'message' => 'Your account was deactivated. Please contact the administrator.'
+                        'message' => 'Your account was deactivated.'."\n".' Please contact the administrator.',
+                        'stats' => 'foraddsell'
                     );
                     echo json_encode($message);
                 }else{
@@ -67,15 +75,67 @@ class Landing extends CI_Controller{
                     $message = array(
                         'type' => 'warning',
                         'message' => 'Your account was not yet activated. Click ok to add verification.',
+                        'stats' => 'foruser',
                         'linkactivate' => base_url() . 'landing/activation/' . $accesscode
                     );
                     echo json_encode($message);
                 }
             }else{
-                $message = array(
-                    'type' => 'success',
+                $line = array(
+                    'account_line' => 1
                 );
-                echo json_encode($message);
+                if($admindetails){
+                    if(!$this->accounts_model->editLineemail('admins_tbl',strtolower($lemail),'email',$line)){
+                        $accesscode = $admindetails[0]->access_code;
+                        $this->session->adminislogin = true;
+                        $this->session->dataadmin = $accesscode;
+                        $message = array(
+                            'type' => 'success',
+                            'linklogin' => base_url().'adminprofile/'
+                        );
+                        echo json_encode($message);
+                    }else{
+                        $message = array(
+                            'type' => 'error',
+                            'message' => 'Something went wrong please try again!',
+                        );
+                        echo json_encode($message);
+                    }
+                }elseif($sellersdetails){
+                    if(!$this->accounts_model->editLineemail('sellers_tbl',strtolower($lemail),'email',$line)){
+                        $accesscode = $sellersdetails[0]->access_code;
+                        $this->session->sellerislogin = true;
+                        $this->session->dataseller = $accesscode;
+                        $message = array(
+                            'type' => 'success',
+                            'linklogin' => base_url().'sellersprofile/'
+                        );
+                        echo json_encode($message);
+                    }else{
+                        $message = array(
+                            'type' => 'error',
+                            'message' => 'Something went wrong please try again!',
+                        );
+                        echo json_encode($message);
+                    }
+                }elseif($userdetails){
+                    if(!$this->accounts_model->editLineemail('users_tbl',strtolower($lemail),'email',$line)){
+                        $accesscode = $sellersdetails[0]->access_code;
+                        $this->session->userislogin = true;
+                        $this->session->datauser = $accesscode;
+                        $message = array(
+                            'type' => 'success',
+                            'linklogin' => base_url().'usersprofile/'
+                        );
+                        echo json_encode($message);
+                    }else{
+                        $message = array(
+                            'type' => 'error',
+                            'message' => 'Something went wrong please try again!',
+                        );
+                        echo json_encode($message);
+                    }
+                }
             }
         }
     }
@@ -83,6 +143,58 @@ class Landing extends CI_Controller{
         $this->load->view('landing/includes/header');
         $this->load->view('landing/signup');
         $this->load->view('landing/includes/footer');
+    }
+    public function signupsubmit(){
+        $this->form_validation->set_rules('firstname','First Name','required');
+        $this->form_validation->set_rules('lastname','Last Name','required');
+        $this->form_validation->set_rules('email','Email','required|valid_email|is_unique[admins_tbl.email]
+                |is_unique[sellers_tbl.email]|is_unique[users_tbl.email]');
+        $this->form_validation->set_rules('contact','Contact Number','required|numeric|exact_length[11]');
+        $this->form_validation->set_rules('address','Address','required');
+        $this->form_validation->set_rules('password','Password','required|min_length[7]');
+        $this->form_validation->set_rules('confirmpassword','Confirm Password','required|min_length[7]|matches[password]');
+        if($this->form_validation->run() == FALSE){
+            $message = array(
+                'type' => 'error',
+                'message' => strip_tags(
+                        form_error('firstname') . "\n" .
+                        form_error('lastname') . "\n" .
+                        form_error('email') . "\n" .
+                        form_error('contact') . "\n" .
+                        form_error('address') . "\n" .
+                        form_error('password') . "\n" .
+                        form_error('confirmpassword') . "\n")
+            );
+            echo json_encode($message);
+        }else{
+            $this->load->helper('string');
+            $verification_code = strtoupper(random_string("alpha", 6));
+            $getAccountsData = array(
+                'firstname' => $this->input->post('firstname'),
+                'lastname' => $this->input->post('lastname'),
+                'image' => 'noimage.png',
+                'gender' => $this->input->post('gender'),
+                'address' => $this->input->post('address'),
+                'contact_number' => $this->input->post('contact'),
+                'email' => strtolower($this->input->post('email')),
+                'password' => sha1($this->input->post('password')),
+                'access_code' => $verification_code
+            );
+            if (!$this->accounts_model->insert('users_tbl', $getAccountsData)) {
+                $message = array(
+                    'type' => 'error',
+                    'message' => 'Something Went Wrong Please Try again!',
+                );
+                echo json_encode($message);
+            } else {
+                $message = array(
+                    'type' => 'success',
+                    'message' => 'Registration Successful!',
+                    'access_code' => $verification_code
+                );
+                echo json_encode($message);
+            }
+        }
     }
     public function shop(){
         $this->load->view('landing/includes/header');

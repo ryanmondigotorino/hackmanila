@@ -35,10 +35,16 @@
                                 type: 'POST',
                                 url: '<?=base_url()?>adminprofile/logout',
                                 data: {
-                                    'accode': 'SampleData',
+                                    'accode': '<?=$accode?>',
                                 },
                                 success: function(result){
-                                    
+                                    if(result == 'Error'){
+                                        swal('Something went wrong please try again!', {
+                                            icon: 'error',
+                                        });
+                                    }else{
+                                        location.href = '<?=base_url()?>';
+                                    }
                                 }
                             });
                         }

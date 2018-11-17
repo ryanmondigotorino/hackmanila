@@ -27,17 +27,28 @@
                     <div class="card" style="width:100%;">
                         <div class="card-body">
                             <div class="profile_content">
-                                <form class="needs-validation login_form" novalidate>
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" name="email" placeholder="Email" required>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <form class="needs-validation login_form" novalidate>
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input type="email" class="form-control" name="email" placeholder="Email" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password">Password</label>
+                                                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <button class="btn btn-dark pull-right" type="submit">Login</button>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <a href="<?=base_url()?>landing/signup">Don't have an account? Sign up here</a>
                                     </div>
-                                    <button class="btn btn-dark" type="submit">Login</button>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -56,9 +67,23 @@
                 success: function(result){
                     var getResult = JSON.parse(result);
                     if(getResult.type == 'success'){
-                        console.log(result);
+                        location.href = getResult.linklogin
                     }else if(getResult.type == 'warning'){
-                        console.log(result);
+                        if(getResult.stats == 'foraddsell'){
+                            swal(getResult.message, {
+                                icon: getResult.type,
+                            });
+                        }else{
+                            swal(getResult.message, {
+                                icon: getResult.type,
+                                buttons: true,
+                                dangerMode: true,
+                            }).then((confirm) => {
+                                if(confirm){
+                                    location.href = getResult.linkactivate
+                                }
+                            });
+                        }
                     }else{
                         swal(getResult.message, {
                             icon: getResult.type,
