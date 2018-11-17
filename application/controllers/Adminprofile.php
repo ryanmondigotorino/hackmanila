@@ -11,8 +11,8 @@ class Adminprofile extends CI_Controller{
         $title = array(
             'title' => 'Home'
         );
-        $this->load->view('landing/includes/header',$title);
-        $this->load->view('landing/home');
-        $this->load->view('landing/includes/footer');
+        $this->load->view('adminprofile/includes/header',$title);
+        $this->load->view('adminprofile/dashboard');
+        $this->load->view('adminprofile/includes/footer');
     }
 }
