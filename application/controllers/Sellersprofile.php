@@ -21,7 +21,7 @@ class Sellersprofile extends CI_Controller{
         $line = array(
             'account_line' => 0
         );
-        if(!$this->accounts_model->editstatus('admins_tbl',$accode,$line)){
+        if(!$this->accounts_model->editstatus('sellers_tbl',$accode,$line)){
             $this->session->sess_destroy();
             echo "Success";
         }else {

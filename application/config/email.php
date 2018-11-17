@@ -6,5 +6,5 @@ $config['smtp_port'] = 465;
 $config['charset'] = "utf-8";
 $config['mailtype'] = "html";
 $config['newline'] = "\r\n";
-$config['smtp_user'] = "nozihcs07@gmail.com";
-$config['smtp_pass'] = "rdregodon123";
+$config['smtp_user'] = "papathorstorino@gmail.com";
+$config['smtp_pass'] = "09284725966";

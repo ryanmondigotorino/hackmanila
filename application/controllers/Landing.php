@@ -205,6 +205,58 @@ class Landing extends CI_Controller{
         );
         $this->load->view('landing/activation',$title);
     }
+    public function sendactivation(){
+        $accode = $this->input->post('accode');
+        $data = array(
+            'access_code' => $accode
+        );
+        $accountdetails = $this->accounts_model->getinfo('users_tbl', $data);
+        $semail = $accountdetails[0]->email;
+        $this->email->from('papathorstorino@gmail.com', 'iTechGadget');
+        $this->email->to($semail);
+        $this->email->subject('Account Verification');
+        $data = array(
+            'name' => "iTechGadget",
+            'accode' => $accode,
+        );
+        $this->email->message($this->load->view('landing/includes/mailer', $data, true));
+        if (!$this->email->send()) {
+            $message = array(
+                'type' => 'error',
+                'message' => 'Something Went Wrong in Email Sending please try again',
+            );
+            echo json_encode($message);
+        } else {
+            $message = array(
+                'type' => 'success',
+                'message' => 'Email successfully sent! Please check your email to confirm.',
+            );
+            echo json_encode($message);
+        }
+    }
+    public function load(){
+        $accesscode = $this->uri->segment(3);
+        $dataarr = array(
+            'access_code' => $accesscode,
+        );
+        $accountdetails = $this->accounts_model->getinfo('users_tbl',$dataarr);
+        $data = array(
+            'account_status' => 1,
+        );
+        if(!$this->accounts_model->editstatus('users_tbl',$accesscode,$data)){
+            $line = array(
+                'account_line' => 1
+            );
+            $this->accounts_model->editstatus('users_tbl',$accesscode,$line);
+            $this->session->userislogin = true;
+            $this->session->datauser = $accesscode;
+            $message = "Your account was activated!";
+            $this->session->set_flashdata('success',$message);
+            redirect("usersprofile/");
+        }else{
+            echo 'error';
+        }
+    }
     public function shop(){
         $this->load->view('landing/includes/header');
         $this->load->view('landing/shop');

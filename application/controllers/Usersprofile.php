@@ -15,4 +15,17 @@ class Usersprofile extends CI_Controller{
         $accode = $this->session->datauser;
         echo 'This is seller = '.$accode;
     }
+    public function logout(){
+        // $accode = $this->input->post('accode');
+        $accode = $this->session->datauser;
+        $line = array(
+            'account_line' => 0
+        );
+        if(!$this->accounts_model->editstatus('users_tbl',$accode,$line)){
+            $this->session->sess_destroy();
+            echo "Success";
+        }else {
+            echo "Error";
+        }
+    }
 }
