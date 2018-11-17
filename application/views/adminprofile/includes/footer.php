@@ -1,8 +1,8 @@
         </div>
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>        
-        <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+        <script src="<?=base_url()?>assets/js/jquery/jquery-3.1.1.min.js"></script>
+        <script src="<?=base_url()?>assets/js/jquery/jquery.validate.min.js"></script>        
+        <script src="<?=base_url()?>assets/js/jquery/feather.min.js"></script>
+        <script src="<?=base_url()?>assets/js/chartjs/chart.min.js"></script>
         <script>
             var myVar;
 
