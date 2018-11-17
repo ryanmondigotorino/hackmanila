@@ -12,9 +12,15 @@ class Adminprofile extends CI_Controller{
     }
     public function index(){
         $accode = $this->session->dataadmin;
+        $allselleraccounts = $this->accounts_model->fetchAlltbl('sellers_tbl');
+        $getsellername = [];
+        foreach($allselleraccounts as $key => $value){
+            $getsellername[$key] = $value->lastname;
+        }
         $title = array(
             'title' => 'Dashboard',
             'accode' => $accode,
+            'sellers' => json_encode($getsellername)
         );
         $this->load->view('adminprofile/includes/header',$title);
         $this->load->view('adminprofile/dashboard');
