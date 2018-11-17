@@ -140,7 +140,10 @@ class Landing extends CI_Controller{
         }
     }
     public function signup(){
-        $this->load->view('landing/includes/header');
+        $title = array(
+            'title' => 'Sign up'
+        );
+        $this->load->view('landing/includes/header',$title);
         $this->load->view('landing/signup');
         $this->load->view('landing/includes/footer');
     }
@@ -177,7 +180,7 @@ class Landing extends CI_Controller{
                 'address' => $this->input->post('address'),
                 'contact_number' => $this->input->post('contact'),
                 'email' => strtolower($this->input->post('email')),
-                'password' => sha1($this->input->post('password')),
+                'password' => sha1($this->input->post('password`')),
                 'access_code' => $verification_code
             );
             if (!$this->accounts_model->insert('users_tbl', $getAccountsData)) {
@@ -195,6 +198,12 @@ class Landing extends CI_Controller{
                 echo json_encode($message);
             }
         }
+    }
+    public function activation(){
+        $title = array(
+            'title' => 'Account Activation'
+        );
+        $this->load->view('landing/activation',$title);
     }
     public function shop(){
         $this->load->view('landing/includes/header');

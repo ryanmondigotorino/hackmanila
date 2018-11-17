@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>iTech</title>
+    <title><?=$title?></title>
     <link rel="stylesheet" href="<?=base_url()?>assets/css/custom.css">
     <script src="<?=base_url()?>assets/js/custom.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
@@ -18,7 +18,7 @@
         <div class="collapse navbar-collapse flex-grow-0" id="navbarDropdown">
             <ul class="navbar-nav text-right">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="<?=base_url()?>">Home</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Shop</a>
