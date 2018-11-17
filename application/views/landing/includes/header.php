@@ -16,13 +16,16 @@
         <div class="collapse navbar-collapse flex-grow-0" id="navbarDropdown">
             <ul class="navbar-nav text-right">
                 <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item active">
                     <a class="nav-link" href="#">Shop</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Stores</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Account</a>
+                    <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Login</a>

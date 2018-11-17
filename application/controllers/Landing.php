@@ -15,14 +15,17 @@ class Landing extends CI_Controller{
         $this->load->view('landing/home');
         $this->load->view('landing/includes/footer');
     }
-
     public function login(){
         $this->load->view('landing/login');
     }
-
     public function signup(){
         $this->load->view('landing/includes/header');
         $this->load->view('landing/signup');
+        $this->load->view('landing/includes/footer');
+    }
+    public function shop(){
+        $this->load->view('landing/includes/header');
+        $this->load->view('landing/shop');
         $this->load->view('landing/includes/footer');
     }
 }

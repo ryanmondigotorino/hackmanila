@@ -56,6 +56,7 @@ nav.navbar {
 .product-title{
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
+    font-weight: 700;
 }
 .product-content{
     font-family: 'Montserrat', sans-serif;
@@ -135,4 +136,18 @@ label{
 }
 .signup {
     margin: 100px 0px;
+}
+
+/** SHOP CSS **/
+.banner-signup{
+    background: url(../images/shop-banner.jpg);
+    color: #fff;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.product-wrap {
+    margin: 50px 0px;
 }
