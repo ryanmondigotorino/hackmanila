@@ -1,0 +1,73 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+a.nav-link {
+    color: #fff !important;
+}
+p.acc-title {
+    font-size: 34px;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 0 10px 0;
+}
+.banner-1 {
+    background: url(../images/section1.jpg);
+    color: #fff;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+nav.navbar {
+    background: transparent;
+    padding: 0px;
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+}
+.new_arrivals{
+    background: url(../images/new-arrivals.jpg);
+    color: #fff;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.product{
+    margin: 150px 0px;
+}
+
+.product-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+}
+.product-content{
+    font-family: 'Montserrat', sans-serif;
+}
+.product-img{
+    width:100%;
+}
+.product-wrapper{
+    border: 5px solid white;
+    max-width: 100%;
+    background-color: #f2f2f2;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px 10px;
+}
+.product-wrapper-small{
+    border: 5px solid white;
+    max-width: 100%;
+    background-color: #f2f2f2;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px 10px;
+}
+.product-wrapper-small {
+    padding: 100px 10px;
+}
+.shop-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
