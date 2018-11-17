@@ -6,6 +6,9 @@ body{
 a.nav-link {
     color: #fff !important;
 }
+a.nav-link:hover {
+    color: #000 !important;
+}
 p.acc-title {
     font-size: 34px;
     font-weight: 700;
@@ -118,4 +121,18 @@ form {
 }
 label{
     color: #000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/** SIGNUP CSS**/
+
+.account-wrapper {
+    margin: 0px;
+    background: url(../images/signup.jpg);
+    background-repeat: no-repeat;
+    color: #fff;
+    width: 100%;
+}
+.signup {
+    margin: 100px 0px;
 }

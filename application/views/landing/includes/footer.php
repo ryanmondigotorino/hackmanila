@@ -5,14 +5,9 @@
                <img class="logo" src="<?=base_url()?>assets/images/logo-black.png" class="img-fluid">
             </center>
             <br>
-            <!-- <ul class="text-center">
-               <li class="list-group-item border-0"><a href="#discover" id="a-footer">DISCOVER OQULO</a></li>
-               <li class="list-group-item border-0"><a href="#features" id="a-footer">FEATURES</a></li>
-               <li class="list-group-item border-0"><a href="#contact" id="a-footer">CONTACT</a></li>
-            </ul> -->
             <center>
                <br>
-               <p class="copy">Copyright &copy; Oqulo 2018.  All rights reserved.</p>
+               <p class="copy">Copyright &copy; iTech 2018.  All rights reserved.</p>
             </center>
             <div style="margin-bottom:5%;"></div>
          </div>

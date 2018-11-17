@@ -19,4 +19,10 @@ class Landing extends CI_Controller{
     public function login(){
         $this->load->view('landing/login');
     }
+
+    public function signup(){
+        $this->load->view('landing/includes/header');
+        $this->load->view('landing/signup');
+        $this->load->view('landing/includes/footer');
+    }
 }
