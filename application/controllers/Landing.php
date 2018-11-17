@@ -20,7 +20,7 @@ class Landing extends CI_Controller{
             'title' => 'getlanding'
         );
         $this->load->view('landing/includes/header',$title);
-        // $this->load->view('landing/home');
+        // $this->load->view('landing/home');    
         $this->load->view('landing/includes/footer');
     }
     
