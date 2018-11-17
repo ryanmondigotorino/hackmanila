@@ -25,7 +25,7 @@
                     <a class="nav-link" href="#">Account</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="<?=base_url()?>landing/login">Login</a>
                 </li>
             </ul>
         </div>

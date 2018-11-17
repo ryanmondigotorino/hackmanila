@@ -201,7 +201,7 @@
 			<input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
 			<ul class="navbar-nav px-3">
 				<li class="nav-item text-nowrap">
-					<a class="nav-link" href="" data-toggle="modal" data-target="#logout">Sign out</a>
+					<button class="logout_btn btn btn-secondary">Sign out</button>
 				</li>
 			</ul>
 		</nav>
@@ -251,29 +251,6 @@
 							</ul>
 						</div>
 					</nav>
-				</div>
-			</div>
-			<div class="modal fade" id="messageVoting" tabindex="-1" role="dialog" aria-labelledby="messageVotingModalCenterTitle" aria-hidden="true" 
-				data-backdrop="static" data-keyboard="false">
-				<div class="modal-dialog modal-dialog-centered" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="messageVotingModalCenterTitle">Voting link Message</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-							<div class="container">
-								<div class="row">
-									<p>There is no current election.</p>
-								</div>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-danger pull-right" data-dismiss="modal" aria-label="Close">Close</button>
-						</div>
-					</div>
 				</div>
 			</div>
 			<div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="logoutModalCenterTitle" aria-hidden="true" 

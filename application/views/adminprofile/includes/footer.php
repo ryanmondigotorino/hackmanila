@@ -23,6 +23,27 @@
                 $('.nav-item').on('mouseout',function(){
                     $(this).css('background-color','');
                 });
+                $('.logout_btn').on('click',function(){
+                    swal('Are you sure do you want to log-out?', {
+                        title: 'Confirmation',
+                        icon: 'warning',
+                        buttons: true,
+                        dangerMode: true,
+                    }).then((confirm) => {
+                        if(confirm){
+                            $.ajax({
+                                type: 'POST',
+                                url: '<?=base_url()?>adminprofile/logout',
+                                data: {
+                                    'accode': 'SampleData',
+                                },
+                                success: function(result){
+                                    
+                                }
+                            });
+                        }
+                    });
+                });
             });
         </script>
     </body>

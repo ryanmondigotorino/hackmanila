@@ -39,4 +39,15 @@ class Adminprofile extends CI_Controller{
         $this->load->view('adminprofile/useraccounts');
         $this->load->view('adminprofile/includes/footer');
     }
+    public function logout(){
+        $accode = $this->input->post('accode');
+        $line = array(
+            'account_line' => 0
+        );
+        if(!$this->accounts_model->editstatus($accode,$line)){
+            echo "Success";
+        }else {
+            echo "Error";
+        }
+    }
 }
