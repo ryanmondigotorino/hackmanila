@@ -15,13 +15,4 @@ class Landing extends CI_Controller{
         $this->load->view('landing/home');
         $this->load->view('landing/includes/footer');
     }
-    public function getlanding(){
-        $title = array(
-            'title' => 'getlanding'
-        );
-        $this->load->view('landing/includes/header',$title);
-        // $this->load->view('landing/home');    
-        $this->load->view('landing/includes/footer');
-    }
-    
 }
