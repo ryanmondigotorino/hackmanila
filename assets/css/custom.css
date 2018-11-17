@@ -1,3 +1,5 @@
+/**HOMEPAGE CSS**/
+
 body{
     font-family: 'Montserrat', sans-serif;
 }
@@ -15,6 +17,15 @@ p.acc-title {
     background: url(../images/section1.jpg);
     color: #fff;
     width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.watch{
+    background: url(../images/apple-watch.jpg);
+    color: #fff;
+    width: 100%;
+    height: 100%;
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -77,4 +88,31 @@ nav.navbar {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     text-align: center;
+}
+.icon-categories{
+    margin: 50px 0px;
+}
+.product-details {
+    text-align: center;
+    padding: 10px 0px;
+}
+.logo{
+    height: 100px;
+}
+p.copy {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+}
+
+/**LOGIN CSS**/
+.login{
+    background: url(../images/login-bg.jpg);
+    color: #fff;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+form {
+    margin: 150px 0px;
 }
